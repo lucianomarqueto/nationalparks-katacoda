@@ -11,5 +11,5 @@ mod_wsgi.server.start(
   '--application-type', 'module',
   '--entry-point', 'wsgi',
   '--inactivity-timeout', '60',
-  '--url-alias', '/ws/healthz/', '/opt/app-root/src/LICENSE'
+  '--url-alias', '/predict/'
 )

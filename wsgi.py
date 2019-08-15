@@ -25,9 +25,9 @@ if __name__ == '__main__':
  '''
 
 import flask
-app = flask.Flask(__name__)
+application = flask.Flask(__name__)
 # define a predict function as an endpoint 
-@app.route("/predict", methods=["GET","POST"])
+@application.route("/predict", methods=["GET","POST"])
 def predict():
     data = {"success": False}
     # get the request parameters
@@ -41,13 +41,13 @@ def predict():
     # return a response in json format 
     return flask.jsonify(data)
 
-@app.route('/')
+@application.route('/')
 def index():
     return 'Welcome back!!!.'
 
 # start the flask app, allow remote connections
 if __name__ == '__main__':  
-    app.run(host='0.0.0.0')
+    application.run(host='0.0.0.0')
 
 ''' 
 # Load libraries
