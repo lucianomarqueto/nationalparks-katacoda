@@ -41,8 +41,8 @@ def predict():
     # return a response in json format 
     return flask.jsonify(data)
 # start the flask app, allow remote connections
-if __name__ == '__main__':  
-    app.run(host='0.0.0.0', port=8080)
+#if __name__ == '__main__':  
+#    app.run(host='0.0.0.0', port=8080)
 
 ''' 
 # Load libraries
