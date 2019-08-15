@@ -23,7 +23,7 @@
 # if __name__ == '__main__':
 #     app.run(debug=False, host='0.0.0.0')
 
-load Flask 
+
 import flask
 app = flask.Flask(__name__)
 # define a predict function as an endpoint 
@@ -40,6 +40,9 @@ def predict():
         data["success"] = True
     # return a response in json format 
     return flask.jsonify(data)
+# start the flask app, allow remote connections
+#if __name__ == '__main__':  
+app.run(host='0.0.0.0', port=8080)
 
 ''' 
 # Load libraries
