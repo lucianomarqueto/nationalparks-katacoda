@@ -23,7 +23,7 @@ def index():
 if __name__ == '__main__':
     application.run(debug=False, host='0.0.0.0')
  '''
-
+''' 
 import flask
 application = flask.Flask(__name__)
 # define a predict function as an endpoint 
@@ -48,8 +48,39 @@ def index():
 # start the flask app, allow remote connections
 if __name__ == '__main__':  
     application.run(host='0.0.0.0')
+ '''
 
 
+import flask
+import pandas as pd
+import tensorflow as tf
+import keras
+from keras.models import load_model
+
+
+application = flask.Flask(__name__)
+# define a predict function as an endpoint 
+@application.route("/predict", methods=["GET","POST"])
+def predict():
+    data = {"success": False}
+    # get the request parameters
+    params = flask.request.json
+    if (params == None):
+        params = flask.request.args
+    # if parameters are found, echo the msg parameter 
+    if (params != None):
+        data["response"] = params.get("msg")
+        data["success"] = True
+    # return a response in json format 
+    return flask.jsonify(data)
+
+@application.route('/')
+def index():
+    return 'Welcome back!!!.'
+
+# start the flask app, allow remote connections
+if __name__ == '__main__':  
+    application.run(host='0.0.0.0')
 
 
 # # Load libraries
