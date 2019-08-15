@@ -2,5 +2,5 @@ mod_wsgi
 Flask
 flask_restful
 pandas
-tensorflow==1.13.2
+tensorflow==2.0.0b1
 keras
