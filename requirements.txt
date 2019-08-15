@@ -1,5 +1,2 @@
 mod_wsgi
 Flask
-tensorflow
-pandas
-keras
