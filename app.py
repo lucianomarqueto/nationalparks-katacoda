@@ -10,6 +10,5 @@ mod_wsgi.server.start(
   '--trust-proxy-header', 'X-Forwarded-Proto',
   '--application-type', 'module',
   '--entry-point', 'wsgi',
-  '--inactivity-timeout', '60',
-  '--url-alias', '/predict/'
+  '--inactivity-timeout', '60'
 )
