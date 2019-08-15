@@ -60,6 +60,22 @@ from keras.models import load_model
 # instantiate flask 
 application = flask.Flask(__name__)
 
+
+@application.route("/predict", methods=["GET","POST"])
+def predict():
+    data = {"success": False}
+    # get the request parameters
+    params = flask.request.json
+    if (params == None):
+        params = flask.request.args
+    # if parameters are found, echo the msg parameter 
+    if (params != None):
+        data["response"] = params.get("msg")
+        data["success"] = True
+    # return a response in json format 
+    return flask.jsonify(data)
+
+''' 
 # we need to redefine our metric function in order 
 # to use it when loading the model 
 def auc(y_true, y_pred):
@@ -90,7 +106,7 @@ def predict():
 
     # return a response in json format 
     return flask.jsonify(data)    
-
+ '''
 @application.route('/')
 def index():
     return 'Welcome back and back!!!.'
