@@ -21,7 +21,7 @@ def index():
     return 'Welcome!!!.'
 
 
-app.run(debug=False, host='0.0.0.0')
+application.run(debug=False, host='0.0.0.0')
 
 
 # import flask
