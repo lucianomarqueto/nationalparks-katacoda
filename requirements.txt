@@ -1,6 +1,5 @@
 mod_wsgi
 Flask
-flask_restful
-pandas
 tensorflow==1.5
+pandas
 keras
