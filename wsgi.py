@@ -20,8 +20,8 @@ api.add_resource(Hello, '/ws/hello/')
 def index():
     return 'Welcome!!!.'
 
-
-application.run(debug=False, host='0.0.0.0')
+if __name__ == '__main__':
+    application.run(debug=False, host='0.0.0.0')
 
 
 # import flask
