@@ -1,4 +1,4 @@
---upgrade pip
+pip==19.2.2
 mod_wsgi
 Flask
 tensorflow==1.5.0
