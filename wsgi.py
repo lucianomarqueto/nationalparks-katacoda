@@ -18,7 +18,7 @@ api.add_resource(Hello, '/ws/hello/')
 
 @application.route('/')
 def index():
-    return 'Welcome to the National Parks data service.'
+    return 'Welcome!!!.'
 
 # if __name__ == '__main__':
 #     app.run(debug=False, host='0.0.0.0')
