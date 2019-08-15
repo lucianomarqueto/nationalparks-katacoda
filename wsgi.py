@@ -23,7 +23,7 @@ def index():
 if __name__ == '__main__':
     application.run(debug=False, host='0.0.0.0')
  '''
-
+''' 
 import flask
 application = flask.Flask(__name__)
 # define a predict function as an endpoint 
@@ -49,7 +49,7 @@ def index():
 if __name__ == '__main__':  
     application.run(host='0.0.0.0')
 
-''' 
+ '''
 # Load libraries
 import flask
 import pandas as pd
@@ -58,7 +58,7 @@ import keras
 from keras.models import load_model
 
 # instantiate flask 
-app = flask.Flask(__name__)
+application = flask.Flask(__name__)
 
 # we need to redefine our metric function in order 
 # to use it when loading the model 
@@ -73,7 +73,7 @@ graph = tf.get_default_graph()
 model = load_model('games.h5', custom_objects={'auc': auc})
 
 # define a predict function as an endpoint 
-@app.route("/predict", methods=["GET","POST"])
+@application.route("/predict", methods=["GET","POST"])
 def predict():
     data = {"success": False}
 
@@ -91,6 +91,10 @@ def predict():
     # return a response in json format 
     return flask.jsonify(data)    
 
-# start the flask app, allow remote connections 
-app.run(host='0.0.0.0')
- '''
+@application.route('/')
+def index():
+    return 'Welcome back and back!!!.'
+
+# start the flask app, allow remote connections
+if __name__ == '__main__':  
+    application.run(host='0.0.0.0')
